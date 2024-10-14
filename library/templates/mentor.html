@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>mentor</title>
+        <style>
+            th{
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+
+    <body bgcolor="pink">
+        <h1>KOLEJ PROFESSIONAL MARA Indera Mahkota</h1>
+        <h2>MENTOR</h2><br>
+        <form action="" method="post">
+            {%csrf_token %}
+            Enter Mentor id:
+            <br>
+            <input type="text" name="mentor_id">
+            <br>
+            <br>
+            Enter mentor name:
+            <br>
+            <input type="text" name="mentor_name">
+            <br>
+            <br>
+            Enter mentor room number:
+            <br>
+            <input type="text" name="mentor_room_no">
+            <br>
+            <br>
+            <input type="submit" value="SAVE"><br>
+        </form>
+        <br>
+        <br>
+        <p><a href="{% url 'index' %}">BACK TO HOMEPAGE </a></p>
+
+        <table>
+            <tr>
+                <th>Mentor ID</th><br>
+                <th>Mentor Name</th><br>
+                <th>Mentor Room Number</th>
+                <th>Update?</th>
+                <th>Delete?</th>
+            </tr>
+
+            {% for i in mymentor %}
+            <tr>
+                <th>{{i.mentor_id}}</th>
+                <th>{{i.mentor_name}}</th>
+                <th>{{i.mentor_room_no}}</th>
+                <th><a href="update_mentor/{{i.mentor_id}}">Update</a></th>
+                <th><a href="delete_mentor/{{i.mentor_id}}">Delete</a></th>
+            </tr>
+            {% endfor %}
+        </table>
+        
+    </body>
+</html>

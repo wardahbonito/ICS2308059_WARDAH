@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>student</title>
+
+        <style>
+            th{
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+
+    <body bgcolor="yellow">
+        <h1>KOLEJ PROFESSIONAL MARA Indera Mahkota</h1>
+        <h2>STUDENT</h2>
+        <table>
+            {% for x in mystudent %}
+            <tr>
+            <th>{{ x.student_id }}</th><br>
+            <th>{{ x.student_name }}</th><br>
+            <th>{{ x.student_email }}</th><br>
+            {% endfor %}
+            </tr>
+        </table>
+    </body>
+</html>

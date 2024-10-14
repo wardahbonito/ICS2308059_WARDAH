@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>update mentor</title>
+    </head>
+
+    <body>
+        <h1>KOLEJ PROFESSIONAL MARA INDERA MAHKOTA</h1>
+        <h2>UPDATE MENTOR</h2>
+
+        <form action="{% url 'save_update_mentor' data.mentor_id %}" method="post">
+            {% csrf_token %}
+                Mentor ID : <input type="text" name = "mentor_id" value="{{data.mentor_id}}" disabled="false"> <br>
+                Mentor Name : <input type="text" name="mentor_name" value="{{data.mentor_name}}"> <br>
+                Mentor Room Number : <input type="text" name="mentor_room_no" value="{{data.mentor_room_no}}"> <br>
+                <input type="submit" value="SAVE">
+        </form>
+        <br>
+        <br>
+        <a href="{% url 'mentor' %}">Back</a>
+    </body>
+</html>

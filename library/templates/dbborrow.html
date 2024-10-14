@@ -1,0 +1,27 @@
+<html>
+    <haed>
+        <title>student</title>
+
+        <style>
+            th{
+                border: 1px solid black;
+            }
+        </style>
+    </haed>
+
+    <body bgcolor="green">
+        <h1>KOLEJ PROFESSIONAL MARA Indera Mahkota</h1>
+        <h2>BORROWING</h2>
+        <table>
+            {% for x in myborrow %}
+            <tr>
+            <th>{{ x.borrow_id }}</th>
+            <th>{{ x.borrow_date }}</th>
+            <th>{{ x.return_date }}</th>
+            <th>{{ x.book_id_id }}</th>
+            <th>{{ x.student_id_id }}</th>
+            {% endfor %}
+            </tr>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+<html>
+    <haed>
+        <title>student</title>
+
+        <style>
+            th{
+                border: 1px solid black;
+            }
+        </style>
+    </haed>
+
+    <body bgcolor="red">
+        <h1>KOLEJ PROFESSIONAL MARA Indera Mahkota</h1>
+        <h2>BOOK</h2>
+        <table>
+            
+            {% for x in mystudent %}
+            <tr>
+            <th>{{ x.book_id }}</th><br>
+            <th>{{ x.title }}</th><br>
+            <th>{{ x.author }}</th><br>
+            <th>{{ x.published_year }}</th><br>
+            {% endfor %}
+            </tr>
+        </table>
+    </body>
+</html>

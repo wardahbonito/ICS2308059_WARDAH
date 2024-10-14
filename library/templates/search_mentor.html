@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>search mentor</title>
+    </head>
+
+    <body bgcolor="#D7EB87">
+        <h1>WELCOME TO KPM INDERA MAHKOTA</h1>
+        <strong>SEARCH MENTOR</strong><br><br>
+        <form action="" method="get">
+            Enter Mentor id: <input type="text" name="c_mentor_id">
+        <input type="submit" value="SEARCH">
+        </form>
+
+        <table border="1">
+            <th>Mentor id</th><th>Mentor Name</th><th>Mentor Room Number</th>
+
+        {% for i in data %}
+
+        <tr>
+            <th>{{i.mentor_id}}</th>
+            <th>{{i.mentor_name}}</th>
+            <th>{{i.mentor_room_no}}</th>
+        </tr>
+        {% endfor %}
+        </table>
+        <br>
+        <br>
+
+        <a href="{% url 'index' %}">BACK TO HOMEPAGE</a>
+    </body>
+</html>
